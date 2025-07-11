@@ -10,13 +10,14 @@ public class Seller
         new Fruits("Banana", 4.99, 10),
         new Fruits("Pineapple", 1),
     };
+
     private Buyer _buyer;
 
     /*public Seller(Buyer buyer)
     {
         _buyer = buyer;
     }*/
-    
+
 
     public void ShowFruits()
     {
@@ -38,7 +39,8 @@ public class Seller
         Fruits Fruit = GetFruit(fruitName);
 
         if (takenCount <= 0)
-        { }
+        {
+        }
         else if (Fruit.Count > takenCount)
         {
             buyer.BuyFruits(Fruit, takenCount);

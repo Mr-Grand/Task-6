@@ -23,7 +23,7 @@ public class Fruits
                 Console.WriteLine("Price must be positive number");
         }
     }
-    
+
     public int Count
     {
         get { return _count; }
@@ -35,7 +35,7 @@ public class Fruits
                 Console.WriteLine("Price must be positive number");
         }
     }
-    
+
     public Fruits(string name, double price, int count)
     {
         Name = name;
@@ -45,7 +45,7 @@ public class Fruits
         _price = Price;
         _count = Count;
     }
-    
+
     public Fruits(string name, int count)
     {
         Name = name;
@@ -54,5 +54,4 @@ public class Fruits
         _price = 9.99;
         _count = Count;
     }
-    
 }

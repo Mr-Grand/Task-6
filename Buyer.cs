@@ -4,7 +4,7 @@ public class Buyer
 {
     public List<Fruits> _boughtFruits = new();
     public double MoneySpent;
-    
+
     public void ShowFruits()
     {
         Console.WriteLine(new string('-', 50));
