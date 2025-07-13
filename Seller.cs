@@ -4,7 +4,7 @@ public class Seller
 {
     private Buyer _buyer;
 
-    private readonly List<Fruits> _fruits = new() // Возможно readonly лишнее
+    private readonly List<Fruits> _fruits = new()
     {
         new Fruits("Apple", 4.50, 5),
         new Fruits("Orange", 7.90, 20),

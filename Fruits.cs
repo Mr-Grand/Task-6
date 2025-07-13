@@ -6,8 +6,8 @@ public class Fruits
     private double _price;
     private string? _name;
 
-    public string? Name 
-    { 
+    public string? Name
+    {
         get => _name;
         set
         {
@@ -17,7 +17,7 @@ public class Fruits
                 Console.WriteLine("Name must exist");
         }
     }
-    
+
     public double Price
     {
         get => _price;
@@ -41,7 +41,7 @@ public class Fruits
                 Console.WriteLine("Count must be positive number");
         }
     }
-    
+
     public Fruits(string name, double price, int count)
     {
         Name = name;
@@ -60,6 +60,4 @@ public class Fruits
         _price = 9.99;
         _count = Count;
     }
-
-    
 }
