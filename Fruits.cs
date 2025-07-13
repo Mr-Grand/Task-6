@@ -2,19 +2,25 @@
 
 public class Fruits
 {
-    private string _name;
-    private double _price;
     private int _count;
+    private double _price;
+    private string? _name;
 
-    public string Name
-    {
-        get { return _name; }
-        set { _name = value; }
+    public string? Name 
+    { 
+        get => _name;
+        set
+        {
+            if (value != null)
+                _name = value;
+            else
+                Console.WriteLine("Name must exist");
+        }
     }
-
+    
     public double Price
     {
-        get { return _price; }
+        get => _price;
         set
         {
             if (value > 0)
@@ -26,16 +32,16 @@ public class Fruits
 
     public int Count
     {
-        get { return _count; }
+        get => _count;
         set
         {
             if (value >= 0)
                 _count = value;
             else
-                Console.WriteLine("Price must be positive number");
+                Console.WriteLine("Count must be positive number");
         }
     }
-
+    
     public Fruits(string name, double price, int count)
     {
         Name = name;
@@ -54,4 +60,6 @@ public class Fruits
         _price = 9.99;
         _count = Count;
     }
+
+    
 }

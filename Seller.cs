@@ -2,22 +2,16 @@
 
 public class Seller
 {
-    private List<Fruits> _fruits = new()
+    private Buyer _buyer;
+
+    private readonly List<Fruits> _fruits = new() // Возможно readonly лишнее
     {
         new Fruits("Apple", 4.50, 5),
         new Fruits("Orange", 7.90, 20),
         new Fruits("Pear", 5.50, 5),
         new Fruits("Banana", 4.99, 10),
-        new Fruits("Pineapple", 1),
+        new Fruits("Pineapple", 1)
     };
-
-    private Buyer _buyer;
-
-    /*public Seller(Buyer buyer)
-    {
-        _buyer = buyer;
-    }*/
-
 
     public void ShowFruits()
     {

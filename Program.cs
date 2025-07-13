@@ -1,10 +1,10 @@
 ﻿namespace Tasks_6_X;
 
-class Program
+internal class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
-        Random random = new Random();
+        Random random = new();
         Seller seller = new();
         Buyer player = new();
 
@@ -12,6 +12,7 @@ class Program
         seller.ShowFruits();
         Console.WriteLine("Here is your fruits");
         player.ShowFruits();
+
         Console.WriteLine("Buying fruit");
         seller.SellFruits(player, "Banana", 7);
         Console.WriteLine("Lasted fruits");
