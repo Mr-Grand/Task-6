@@ -1,33 +1,32 @@
 ﻿namespace Tasks_6_X;
 
-internal class Program
+class Program
 {
-    private static void Main(string[] args)
+    static void Main(string[] args)
     {
-        Random random = new();
+        Random random = new Random();
         Seller seller = new();
         Buyer player = new();
 
-        Console.WriteLine("Here is owned fruits");
+        Console.WriteLine("Вот фрукты в наличии");
         seller.ShowFruits();
-        Console.WriteLine("Here is your fruits");
+        Console.WriteLine("Вот ваши фрукты");
         player.ShowFruits();
-
-        Console.WriteLine("Buying fruit");
+        Console.WriteLine("Покупаем фрукты");
         seller.SellFruits(player, "Banana", 7);
-        Console.WriteLine("Lasted fruits");
+        Console.WriteLine("Оставшиеся фрукты");
         seller.ShowFruits();
-        Console.WriteLine("Your fruits");
+        Console.WriteLine("Ваши фрукты");
         player.ShowFruits();
 
-        Console.WriteLine("\nBuying some more fruits");
+        Console.WriteLine("\nПокупаем еще фруктов");
         seller.SellFruits(player, "Pineapple", -20);
         seller.SellFruits(player, "Apple", random.Next(0, 22));
         seller.SellFruits(player, "Pear", 0);
         seller.SellFruits(player, "Orange", random.Next(0, 22));
-        Console.WriteLine("Here is owned fruits");
+        Console.WriteLine("Оставшиеся фрукты");
         seller.ShowFruits();
-        Console.WriteLine("Here is your fruits");
+        Console.WriteLine("Ваши фрукты");
         player.ShowFruits();
     }
 }

@@ -2,21 +2,18 @@
 
 public class Buyer
 {
-    public List<Fruits> _boughtFruits = new();
-    public double MoneySpent;
+    private List<Fruits> _boughtFruits = new();
+    public double MoneySpent { get; private set; }
 
     public void ShowFruits()
     {
-        Console.WriteLine(new string('-', 50));
-        foreach (Fruits fruit in _boughtFruits)
-            Console.WriteLine($"| fruit name: {fruit.Name} " +
-                              $"\t| Price: {fruit.Price} " +
-                              $"\t| Count: {fruit.Count} |");
-        Console.WriteLine(new string('-', 50));
+        ShowItem.Show(_boughtFruits);
+        Console.WriteLine($"MoneySpent: {MoneySpent}");
     }
 
     public void BuyFruits(Fruits fruitItem, int boughtCount)
     {
         _boughtFruits.Add(new Fruits(fruitItem.Name, fruitItem.Price, boughtCount));
+        MoneySpent += fruitItem.Price * boughtCount;
     }
 }
