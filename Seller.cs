@@ -2,13 +2,13 @@
 
 public class Seller
 {
-    private List<Fruits> _fruits = new()
+    private List<Items> _fruits = new()
     {
-        new Fruits("Apple", 4.50, 5),
-        new Fruits("Orange", 7.90, 20),
-        new Fruits("Pear", 5.50, 5),
-        new Fruits("Banana", 4.99, 10),
-        new Fruits("Pineapple", 1),
+        new Items("Apple", 4.50, 5),
+        new Items("Orange", 7.90, 20),
+        new Items("Pear", 5.50, 5),
+        new Items("Banana", 4.99, 10),
+        new Items("Pineapple", 1),
     };
 
     public void ShowFruits()
@@ -16,9 +16,9 @@ public class Seller
         ShowItem.Show(_fruits);
     }
 
-    public Fruits? GetFruit(string name)
+    public Items? GetFruit(string name)
     {
-        Fruits? gettedFruit = _fruits.Find(f => f.Name == name);
+        Items? gettedFruit = _fruits.Find(f => f.Name == name);
         if (gettedFruit != null)
         {
             return gettedFruit;
@@ -32,7 +32,7 @@ public class Seller
 
     public void SellFruits(Buyer buyer, string fruitName, int takenCount)
     {
-        Fruits? fruit = GetFruit(fruitName);
+        Items? fruit = GetFruit(fruitName);
 
         if (fruit != null)
         {

@@ -2,10 +2,10 @@
 
 public static class ShowItem
 {
-    public static void Show(List<Fruits> fruitItems)
+    public static void Show(List<Items> fruitItems)
     {
         Console.WriteLine(new string('-', 50));
-        foreach (Fruits fruit in fruitItems)
+        foreach (Items fruit in fruitItems)
             Console.WriteLine($"| fruit name: {fruit.Name} " +
                               $"\t| Price: {fruit.Price} " +
                               $"\t| Count: {fruit.Count} |");

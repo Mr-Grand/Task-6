@@ -1,10 +1,11 @@
 ﻿namespace Tasks_6_X;
 
-public class Fruits
+public class Items
 {
-    public string Name { get; private set; }
     private double _price;
     private int _count;
+    private const double _defaultPrice = 9.99;
+    public string Name { get; private set; }
 
     public double Price
     {
@@ -30,17 +31,17 @@ public class Fruits
         }
     }
 
-    public Fruits(string name, double price, int count)
+    public Items(string name, double price, int count)
     {
         Price = price;
         Count = count;
         Name = name;
     }
 
-    public Fruits(string name, int count)
+    public Items(string name, int count)
     {
         Count = count;
         Name = name;
-        Price = 9.99; // Дефолтная цена. Или лучше через константное поле?
+        Price = _defaultPrice; // Дефолтная цена. Или лучше через константное поле?
     }
 }
