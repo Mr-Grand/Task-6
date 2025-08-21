@@ -4,8 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
+
+        SellerFactory firstSellerFactory = new FruitsSeller("Fruit seller");
+        Seller seller = firstSellerFactory.CreateSeller();
+        
         Random random = new Random();
-        Seller seller = new();
+        //Seller seller = new();
         Buyer player = new();
 
         Console.WriteLine("Вот фрукты в наличии");
