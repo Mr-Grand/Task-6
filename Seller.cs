@@ -2,11 +2,11 @@
 
 public class Seller
 {
-    private List<Items> _items;
+    private List<Item> _items;
 
-    public Seller(List<Items> items)
+    public Seller(IEnumerable<Item> items)
     {
-        _items = items;
+        _items = items.ToList(); // Возможна ошибка
     }
 
     public void ShowFruits()
@@ -14,9 +14,9 @@ public class Seller
         ShowItem.Show(_items);
     }
 
-    public Items? GetFruit(string name)
+    public Item? GetFruit(string name)
     {
-        Items? gettedFruit = _items.Find(f => f.Name == name);
+        Item? gettedFruit = _items.Find(f => f.Id == name);
         if (gettedFruit != null)
         {
             return gettedFruit;
@@ -30,7 +30,7 @@ public class Seller
 
     public void SellFruits(Buyer buyer, string itemName, int takenCount)
     {
-        Items? item = GetFruit(itemName);
+        Item? item = GetFruit(itemName);
 
         if (item != null)
         {

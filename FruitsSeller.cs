@@ -7,15 +7,16 @@ public class FruitsSeller : SellerFactory
 
     public override Seller CreateSeller()
     {
-        List<Items> items = new List<Items>()
+        List<Item> fruits = new List<Item>()
         {
-            new Items("Apple", 4.50, 5),
-            new Items("Orange", 7.90, 20),
-            new Items("Pear", 5.50, 5),
-            new Items("Banana", 4.99, 10),
-            new Items("Pineapple", 1),
+            // Не придумал уникального поля для фрукта, сделал просто Item
+            new Item("Apple", 4.50, 5),
+            new Item("Orange", 7.90, 20),
+            new Item("Pear", 5.50, 5),
+            new Item("Banana", 4.99, 10),
+            new Item("Pineapple", 1),
         };
-        Seller seller = new Seller(items);
-        return seller;
+        Seller sellerFruits = new Seller(fruits);
+        return sellerFruits;
     }
 }

@@ -2,7 +2,7 @@
 
 public class Buyer
 {
-    private List<Items> _boughtItems = new();
+    private List<Item> _boughtItems = new();
     public double MoneySpent { get; private set; }
 
     public void ShowFruits()
@@ -11,9 +11,9 @@ public class Buyer
         Console.WriteLine($"MoneySpent: {MoneySpent}");
     }
 
-    public void BuyFruits(Items item, int boughtCount)
+    public void BuyFruits(Item item, int boughtCount)
     {
-        _boughtItems.Add(new Items(item.Name, item.Price, boughtCount));
+        _boughtItems.Add(new Item(item.Id, item.Price, boughtCount));
         MoneySpent += item.Price * boughtCount;
     }
 }
