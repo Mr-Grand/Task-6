@@ -15,14 +15,13 @@ public class Buyer
     {
         if (!_boughtItems.ContainsKey(item))
         {
-            _boughtItems[item]++;
+            _boughtItems.Add(item, boughtCount);
             MoneySpent += item.Price * boughtCount;
         }
         else
         {
-            _boughtItems.Add(item, boughtCount);
+            _boughtItems[item]++;
             MoneySpent += item.Price * boughtCount;
-            
         }
     }
 }
