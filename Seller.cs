@@ -16,7 +16,7 @@ public class Seller
 
     public Item? GetFruit(string name)
     {
-        Item? gettedFruit = _items.Find(f => f.Id == name);
+        Item? gettedFruit = _items.Keys.FirstOrDefault(f => f.Id == name);
         if (gettedFruit != null)
         {
             return gettedFruit;
@@ -28,34 +28,34 @@ public class Seller
         }
     }
 
-    public void SellFruits(Buyer buyer, string itemName, int takenCount)
+    public void SellFruits(Buyer buyer, string itemId, int takenCount)
     {
-        Item? item = GetFruit(itemName);
+        Item? item = GetFruit(itemId);
 
         if (item != null)
         {
         }
         else
         {
-            Console.WriteLine("Item not found!");
+            Console.WriteLine("Item not found");
         }
 
         if (takenCount <= 0)
         {
         } // не вижу смысла что-то делать, возможно использовать исключения или вывод на консоль с текстом?
-        else if (item.Count > takenCount)
+        else if (_items[item] > takenCount)
         {
             buyer.BuyFruits(item, takenCount);
-            item.Count -= takenCount;
+            _items[item] -= takenCount;
         }
-        else if (item.Count == takenCount)
+        else if (_items[item] == takenCount)
         {
             buyer.BuyFruits(item, takenCount);
             _items.Remove(item);
         }
         else
         {
-            buyer.BuyFruits(item, item.Count);
+            buyer.BuyFruits(item, _items[item]);
             _items.Remove(item);
         }
     }

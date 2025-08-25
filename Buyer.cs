@@ -2,7 +2,7 @@
 
 public class Buyer
 {
-    private List<Item> _boughtItems = new();
+    private Dictionary<Item, int> _boughtItems = new();
     public double MoneySpent { get; private set; }
 
     public void ShowFruits()
@@ -13,7 +13,16 @@ public class Buyer
 
     public void BuyFruits(Item item, int boughtCount)
     {
-        _boughtItems.Add(new Item(item.Id, item.Price, boughtCount));
-        MoneySpent += item.Price * boughtCount;
+        if (!_boughtItems.ContainsKey(item))
+        {
+            _boughtItems[item]++;
+            MoneySpent += item.Price * boughtCount;
+        }
+        else
+        {
+            _boughtItems.Add(item, boughtCount);
+            MoneySpent += item.Price * boughtCount;
+            
+        }
     }
 }

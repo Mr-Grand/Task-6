@@ -4,7 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-
         SellerFactory firstSellerFactory = new FruitsSeller("Fruit seller");
         Seller seller = firstSellerFactory.CreateSeller();
         
