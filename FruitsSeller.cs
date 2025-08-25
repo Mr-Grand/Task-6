@@ -7,14 +7,13 @@ public class FruitsSeller : SellerFactory
 
     public override Seller CreateSeller()
     {
-        List<Item> fruits = new List<Item>()
+        Dictionary<Item, int> fruits = new Dictionary<Item, int>()
         {
-            // Не придумал уникального поля для фрукта, сделал просто Item
-            new Item("Apple", 4.50, 5),
-            new Item("Orange", 7.90, 20),
-            new Item("Pear", 5.50, 5),
-            new Item("Banana", 4.99, 10),
-            new Item("Pineapple", 1),
+            { new Item("Apple", 4.5), 5 },
+            { new Item("Orange", 7.90), 10 },
+            { new Item("Pear", 5.50), 5 },
+            { new Item("Banana", 4.99), 10 },
+            { new Item("Pineapple", 1), 1 },
         };
         Seller sellerFruits = new Seller(fruits);
         return sellerFruits;

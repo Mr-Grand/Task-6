@@ -21,12 +21,12 @@ public class Weapon : Item
         }
     }
     
-    public Weapon(string id, int count, double price, double damage) : base(id, count)
+    public Weapon(string id, double price, double damage) : base(id, price)
     {
         Damage = damage;
     }
 
-    public Weapon(string id, int count) : base(id, count)
+    public Weapon(string id) : base(id)
     {
         Damage = BaseDamage;
     }

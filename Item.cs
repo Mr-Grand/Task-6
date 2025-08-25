@@ -3,7 +3,6 @@
 public class Item
 {
     private double _price;
-    private int _count;
     private const double _defaultPrice = 9.99;
     public string Id { get; private set; }
 
@@ -18,29 +17,15 @@ public class Item
                 Console.WriteLine("Price must be positive number");
         }
     }
-
-    public int Count
-    {
-        get { return _count; }
-        set
-        {
-            if (value >= 0)
-                _count = value;
-            else
-                Console.WriteLine("Count  must be positive number");
-        }
-    }
-
-    public Item(string id, double price, int count)
+    
+    public Item(string id, double price)
     {
         Price = price;
-        Count = count;
         Id = id;
     }
 
-    public Item(string id, int count)
+    public Item(string id)
     {
-        Count = count;
         Id = id;
         Price = _defaultPrice; // Дефолтная цена. Или лучше через константное поле?
     }

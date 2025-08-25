@@ -7,10 +7,10 @@ public class WeaponSeller : SellerFactory
 
     public override Seller CreateSeller()
     {
-        List<Weapon> weapons = new() 
+        Dictionary<Weapon, int> weapons = new()
         {
-            new Weapon("Sword+0", 100),
-            new Weapon("Sword+1", 100, 20, 2.2),
+            { new Weapon("Sword+0"), 100 },
+            { new Weapon("Sword+1", 100, 20), 10}
         };
         Seller seller = new Seller(weapons);
         return seller;

@@ -2,11 +2,11 @@
 
 public class Seller
 {
-    private List<Item> _items;
+    private Dictionary<Item, int> _items;
 
-    public Seller(IEnumerable<Item> items)
+    public Seller(Dictionary<Item,int> items)
     {
-        _items = items.ToList(); // Возможна ошибка
+        _items = items.ToDictionary();
     }
 
     public void ShowFruits()
