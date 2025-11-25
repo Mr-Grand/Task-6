@@ -27,3 +27,18 @@ C:\Users\user\Desktop\Task-6\obj\Debug\net9.0\Task-6.pdb
 C:\Users\user\Desktop\Task-6\obj\Debug\net9.0\Task-6.genruntimeconfig.cache
 C:\Users\user\Desktop\Task-6\obj\Debug\net9.0\ref\Task-6.dll
 C:\Users\user\Desktop\Tasks 6-X\Task-6\obj\Debug\net9.0\Task-6.sourcelink.json
+D:\Github_repClones\Task-6\bin\Debug\net9.0\Task-6.exe
+D:\Github_repClones\Task-6\bin\Debug\net9.0\Task-6.deps.json
+D:\Github_repClones\Task-6\bin\Debug\net9.0\Task-6.runtimeconfig.json
+D:\Github_repClones\Task-6\bin\Debug\net9.0\Task-6.dll
+D:\Github_repClones\Task-6\bin\Debug\net9.0\Task-6.pdb
+D:\Github_repClones\Task-6\obj\Debug\net9.0\Task-6.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github_repClones\Task-6\obj\Debug\net9.0\Task-6.AssemblyInfoInputs.cache
+D:\Github_repClones\Task-6\obj\Debug\net9.0\Task-6.AssemblyInfo.cs
+D:\Github_repClones\Task-6\obj\Debug\net9.0\Task-6.csproj.CoreCompileInputs.cache
+D:\Github_repClones\Task-6\obj\Debug\net9.0\Task-6.sourcelink.json
+D:\Github_repClones\Task-6\obj\Debug\net9.0\Task-6.dll
+D:\Github_repClones\Task-6\obj\Debug\net9.0\refint\Task-6.dll
+D:\Github_repClones\Task-6\obj\Debug\net9.0\Task-6.pdb
+D:\Github_repClones\Task-6\obj\Debug\net9.0\Task-6.genruntimeconfig.cache
+D:\Github_repClones\Task-6\obj\Debug\net9.0\ref\Task-6.dll

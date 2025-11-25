@@ -5,13 +5,13 @@ public class Buyer
     private Dictionary<Item, int> _boughtItems = new();
     public double MoneySpent { get; private set; }
 
-    public void ShowFruits()
+    public void ShowItems()
     {
         ShowItem.Show(_boughtItems);
         Console.WriteLine($"MoneySpent: {MoneySpent}");
     }
 
-    public void BuyFruits(Item item, int boughtCount)
+    public void BuyItems(Item item, int boughtCount)
     {
         if (!_boughtItems.ContainsKey(item))
         {

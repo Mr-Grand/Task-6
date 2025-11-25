@@ -2,8 +2,9 @@
 
 public class Item
 {
+    private const double DEFAULT_PRICE = 9.99;
+    
     private double _price;
-    private const double _defaultPrice = 9.99;
     public string Id { get; private set; }
 
     public double Price
@@ -27,6 +28,18 @@ public class Item
     public Item(string id)
     {
         Id = id;
-        Price = _defaultPrice; // Дефолтная цена. Или лучше через константное поле?
+        Price = DEFAULT_PRICE;
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (obj is Item newObj)
+            return Id == newObj.Id;
+        return false;
+    }
+
+    public override int GetHashCode()
+    {
+        return Id.GetHashCode();
     }
 }

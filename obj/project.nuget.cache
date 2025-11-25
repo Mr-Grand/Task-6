@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "jb8Om4FKwCk=",
+  "dgSpecHash": "7g9S52BSIoo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Tasks 6-X\\Task-6\\Task-6.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Github_repClones\\Task-6\\Task-6.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\frog\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.11\\microsoft.netcore.app.ref.9.0.11.nupkg.sha512",
+    "C:\\Users\\frog\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.11\\microsoft.windowsdesktop.app.ref.9.0.11.nupkg.sha512",
+    "C:\\Users\\frog\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.11\\microsoft.aspnetcore.app.ref.9.0.11.nupkg.sha512",
+    "C:\\Users\\frog\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.11\\microsoft.netcore.app.host.win-x64.9.0.11.nupkg.sha512"
+  ],
   "logs": []
 }

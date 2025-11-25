@@ -2,12 +2,12 @@
 
 public static class ShowItem
 {
-    public static void Show(Dictionary<Item, int> fruitItems)
+    public static void Show(Dictionary<Item, int> items)
     {
         Console.WriteLine(new string('-', 50));
         
-        foreach (var item in fruitItems)
-            Console.WriteLine($"| fruit name: {item.Key.Id} " +
+        foreach (var item in items)
+            Console.WriteLine($"| Item name: {item.Key.Id} " +
                               $"\t| Price: {item.Key.Price} " +
                               $"\t| Count: {item.Value} |");
         

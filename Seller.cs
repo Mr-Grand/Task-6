@@ -9,53 +9,65 @@ public class Seller
         _items = items.ToDictionary();
     }
 
-    public void ShowFruits()
+    public void ShowItems()
     {
         ShowItem.Show(_items);
     }
 
-    public Item? GetFruit(string name)
+    public Item? GetItem(string name)
     {
-        Item? gettedFruit = _items.Keys.FirstOrDefault(f => f.Id == name);
-        if (gettedFruit != null)
+        Item gettedItemNew = new Item(name/*, _items[name].*/);
+        bool isItemFound = _items.ContainsKey(gettedItemNew);
+
+        if (isItemFound)
         {
-            return gettedFruit;
+            return gettedItemNew;
         }
         else
         {
             Console.WriteLine("Item not found");
             return null;
         }
-    }
-
-    public void SellFruits(Buyer buyer, string itemId, int takenCount)
-    {
-        Item? item = GetFruit(itemId);
-
-        if (item != null)
+        
+        /*Item? gettedItem = _items.Keys.FirstOrDefault(f => f.Id == name);
+        
+        if (gettedItem != null)
         {
+            return gettedItem;
         }
         else
         {
             Console.WriteLine("Item not found");
+            return null;
+        }*/
+    }
+
+    public void SellItems(Buyer buyer, string itemId, int takeCount)
+    {
+        Item? item = GetItem(itemId);
+
+        if (item == null)
+        {
+            throw new ArgumentNullException("Item not found");
         }
 
-        if (takenCount <= 0)
+        if (takeCount <= 0)
         {
-        } // не вижу смысла что-то делать, возможно использовать исключения или вывод на консоль с текстом?
-        else if (_items[item] > takenCount)
+            throw new ArgumentNullException("Item not found");
+        } 
+        else if (_items[item] > takeCount)
         {
-            buyer.BuyFruits(item, takenCount);
-            _items[item] -= takenCount;
+            buyer.BuyItems(item, takeCount);
+            _items[item] -= takeCount;
         }
-        else if (_items[item] == takenCount)
+        else if (_items[item] == takeCount)
         {
-            buyer.BuyFruits(item, takenCount);
+            buyer.BuyItems(item, takeCount);
             _items.Remove(item);
         }
         else
         {
-            buyer.BuyFruits(item, _items[item]);
+            buyer.BuyItems(item, _items[item]);
             _items.Remove(item);
         }
     }

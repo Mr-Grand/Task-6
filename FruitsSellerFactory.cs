@@ -1,8 +1,8 @@
 ﻿namespace Tasks_6_X;
 
-public class FruitsSeller : SellerFactory
+public class FruitsSellerFactory : SellerFactory
 {
-    public FruitsSeller(string id) : base(id)
+    public FruitsSellerFactory(string id) : base(id)
     { }
 
     public override Seller CreateSeller()
