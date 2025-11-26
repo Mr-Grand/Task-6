@@ -2,15 +2,36 @@
 
 public static class ShowItem
 {
-    public static void Show(Dictionary<Item, int> items)
+    public static void ShowWithTuple(Dictionary<string, (Item item, int count)> items)
     {
-        Console.WriteLine(new string('-', 50));
+        Console.WriteLine(new string('_', 50));
+
+        foreach (var pair in items)
+        {
+            var name = pair.Key;
+            var data = pair.Value;
+            
+            Item item = data.item;
+            int count = data.count;
+            
+            Console.WriteLine($"| Item name: {name} " +
+                              $"\t| Price: {item.Price} " +
+                              $"\t| Count: {count} |");
+        }
         
-        foreach (var item in items)
-            Console.WriteLine($"| Item name: {item.Key.Id} " +
-                              $"\t| Price: {item.Key.Price} " +
-                              $"\t| Count: {item.Value} |");
+        Console.WriteLine(new string('_', 50));
+    }
+
+    public static void Show(Dictionary<string, int> items)
+    {
+        Console.WriteLine(new string('_', 50));
         
-        Console.WriteLine(new string('-', 50));
+        foreach (var pair in items)
+        {
+            Console.WriteLine($"| Item name: {pair.Key} " +
+                              $"\t| Count: {pair.Value} |");
+        }
+        
+        Console.WriteLine(new string('_', 50));
     }
 }

@@ -2,73 +2,63 @@
 
 public class Seller
 {
-    private Dictionary<Item, int> _items;
+    private Dictionary<string, (Item, int)> _items;
 
-    public Seller(Dictionary<Item,int> items)
+    public Seller(List<(string name, Item item, int count)> items)
     {
-        _items = items.ToDictionary();
+        _items = items.ToDictionary(
+            i => i.name,
+            i => (i.item, i.count)
+        );
     }
 
     public void ShowItems()
     {
-        ShowItem.Show(_items);
+        ShowItem.ShowWithTuple(_items);
     }
-
-    public Item? GetItem(string name)
+    
+    public void SellItems(Buyer buyer, string itemName, int takeCount)
     {
-        Item gettedItemNew = new Item(name/*, _items[name].*/);
-        bool isItemFound = _items.ContainsKey(gettedItemNew);
+        var itemInfo = GetItemInfo(itemName);
+        
+        // Разбил предмет на части для удобства чтения
+        var data = itemInfo.data;
+        Item item = data.item;
+        int count = data.count;
 
-        if (isItemFound)
+        if (item == null || takeCount <= 0)
         {
-            return gettedItemNew;
+            throw new ArgumentNullException("Item not found");
+        }
+        
+        int sellCount = Math.Min(count, takeCount);
+        buyer.BuyItems(itemName, sellCount, item.Price);
+
+        if (sellCount == count)
+        {
+            _items.Remove(itemName);
         }
         else
         {
-            Console.WriteLine("Item not found");
-            return null;
+            int newItemCount = count - sellCount;
+            _items[itemName] = (item, newItemCount);
         }
-        
-        /*Item? gettedItem = _items.Keys.FirstOrDefault(f => f.Id == name);
-        
-        if (gettedItem != null)
+    }
+    
+    private (string name,(Item item, int count) data) GetItemInfo(string itemName)
+    {
+        bool isItemFound = _items.ContainsKey(itemName);
+
+        if (isItemFound)
         {
+            var foundItem = _items[itemName];
+            var gettedItem = (itemName, foundItem);
             return gettedItem;
         }
         else
         {
             Console.WriteLine("Item not found");
-            return null;
-        }*/
-    }
-
-    public void SellItems(Buyer buyer, string itemId, int takeCount)
-    {
-        Item? item = GetItem(itemId);
-
-        if (item == null)
-        {
-            throw new ArgumentNullException("Item not found");
-        }
-
-        if (takeCount <= 0)
-        {
-            throw new ArgumentNullException("Item not found");
-        } 
-        else if (_items[item] > takeCount)
-        {
-            buyer.BuyItems(item, takeCount);
-            _items[item] -= takeCount;
-        }
-        else if (_items[item] == takeCount)
-        {
-            buyer.BuyItems(item, takeCount);
-            _items.Remove(item);
-        }
-        else
-        {
-            buyer.BuyItems(item, _items[item]);
-            _items.Remove(item);
+            return (null,(null,0)); // Это нормальная практика? Не придумал ничего лучше
         }
     }
 }

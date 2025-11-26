@@ -2,26 +2,32 @@
 
 public class Buyer
 {
-    private Dictionary<Item, int> _boughtItems = new();
-    public double MoneySpent { get; private set; }
+    private Dictionary<string, int> _boughtItems = new ();
+    private double _moneySpent = 0.0;
 
     public void ShowItems()
     {
         ShowItem.Show(_boughtItems);
-        Console.WriteLine($"MoneySpent: {MoneySpent}");
+        if(_moneySpent > 0)
+            Console.WriteLine($"MoneySpent: {_moneySpent}");
     }
 
-    public void BuyItems(Item item, int boughtCount)
+    public void BuyItems(string name, int boughtCount, double price)
     {
-        if (!_boughtItems.ContainsKey(item))
+        if (!_boughtItems.ContainsKey(name))
         {
-            _boughtItems.Add(item, boughtCount);
-            MoneySpent += item.Price * boughtCount;
+            _boughtItems.Add(name, boughtCount);
+            AccountingMoneySpent(price, boughtCount);
         }
         else
         {
-            _boughtItems[item]++;
-            MoneySpent += item.Price * boughtCount;
+            _boughtItems[name] += boughtCount;
+            AccountingMoneySpent(price, boughtCount);
         }
+    }
+
+    private void AccountingMoneySpent(double price, int boughtCount)
+    {
+        _moneySpent += price * boughtCount;
     }
 }

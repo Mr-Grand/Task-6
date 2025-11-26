@@ -31,7 +31,9 @@ public class Item
         Price = DEFAULT_PRICE;
     }
 
-    public override bool Equals(object obj)
+    // По итогу из-за изменения словаря мне не понадобилось изменять 2 этих метода
+    // т.к. я ищу и сравниваю по ключу string name
+    /*public override bool Equals(object obj)
     {
         if (obj is Item newObj)
             return Id == newObj.Id;
@@ -41,5 +43,5 @@ public class Item
     public override int GetHashCode()
     {
         return Id.GetHashCode();
-    }
+    }*/
 }
